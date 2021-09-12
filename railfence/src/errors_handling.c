@@ -1,7 +1,7 @@
 #include "railfence.h"
 
 void print_error() {
-    write(2, "\"usage: ./railfence \"str\" \"key\"\n", mx_strlen("\"usage: ./railfence \"str\" \"key\"\n"));
+    write(2, "usage: ./railfence \"str\" \"key\"\n", mx_strlen("usage: ./railfence \"str\" \"key\"\n"));
     exit(1);
 }
 

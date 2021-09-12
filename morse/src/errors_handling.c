@@ -1,7 +1,7 @@
 #include "morse.h"
 
 void print_error() {
-    write(2, "\"usage: ./morse \"str\"\n", mx_strlen("\"usage: ./morse \"str\"\n"));
+    write(2, "usage: ./morse \"str\"\n", mx_strlen("usage: ./morse \"str\"\n"));
     exit(1);
 }
 

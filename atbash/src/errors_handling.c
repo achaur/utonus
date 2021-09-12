@@ -1,7 +1,7 @@
 #include "atbash.h"
 
 void print_error() {
-    write(2, "\"usage: ./atbash \"str\"\n", mx_strlen("\"usage: ./atbash \"str\"\n"));
+    write(2, "usage: ./atbash \"str\"\n", mx_strlen("usage: ./atbash \"str\"\n"));
     exit(1);
 }
 

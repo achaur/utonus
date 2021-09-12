@@ -1,7 +1,7 @@
 #include "baconian.h"
 
 void print_error() {
-    write(2, "\"usage: ./baconian \"str\"\n", mx_strlen("\"usage: ./baconian \"str\"\n"));
+    write(2, "usage: ./baconian \"str\"\n", mx_strlen("usage: ./baconian \"str\"\n"));
     exit(1);
 }
 

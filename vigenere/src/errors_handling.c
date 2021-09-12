@@ -1,7 +1,7 @@
 #include "vigenere.h"
 
 void print_error() {
-    write(2, "\"usage: ./vigenere \"str\" \"key\"\n", mx_strlen("\"usage: ./vigenere \"str\" \"key\"\n"));
+    write(2, "usage: ./vigenere \"str\" \"key\"\n", mx_strlen("usage: ./vigenere \"str\" \"key\"\n"));
     exit(1);
 }
 

@@ -1,7 +1,7 @@
 #include "caesar.h"
 
 void print_error() {
-    write(2, "\"usage: ./caesar \"str\" \"key\"\n", mx_strlen("\"usage: ./caesar \"str\" \"key\"\n"));
+    write(2, "usage: ./caesar \"str\" \"key\"\n", mx_strlen("usage: ./caesar \"str\" \"key\"\n"));
     exit(1);
 }
 

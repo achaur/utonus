@@ -10,13 +10,13 @@
 // Your program must print usage: ./vigenere "str" "key" on the standard error stream
 // in case of any errors.
 // To decrypt the next cipher, use the keyword "brain".
- 
+
 #include "vigenere.h"
 
 static bool is_upper_case(char c) {
     return (c > 64 && c < 91);
 }
-
+#include <stdio.h>
 void decrypt(char *str, char *key) {
     char alphabet[26] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 
                          'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
@@ -34,6 +34,11 @@ void decrypt(char *str, char *key) {
         }
         shift++;
     }
+    for (int i = 0; i < 26; i++) {
+        for (int j = 0; j < 26; j++)
+            printf("%c ", vigenere_table[i][j]);
+        printf("\n");
+    }
     for (int i = 0; i < mx_strlen(key); i++)
         if (is_upper_case(key[i]))
             key[i] += 32;
@@ -41,11 +46,17 @@ void decrypt(char *str, char *key) {
         if (mx_isalpha(str[i])) {
             column = 0;
             if (is_upper_case(str[i]))
-                while(vigenere_table[column][key[index] - 'a'] != str[i] + 32)
+                    while(vigenere_table[column][key[index] - 'a'] != str[i] + 32) {
+                    printf("index = %d, column = %d\n", index, column);
                     column++;
-            else
-                while(vigenere_table[column][key[index] - 'a'] != str[i])
+                }
+            else {
+                printf("index = %d, column = %d\n", index, column);
+                while(vigenere_table[column][key[index] - 'a'] != str[i]) {
                     column++;
+                }
+            }
+                
             output[i] = alphabet[column] - 32 * (is_upper_case(str[i]));
             index++;
             index = index % mx_strlen(key);
@@ -53,7 +64,7 @@ void decrypt(char *str, char *key) {
         else 
             output[i] = str[i];
     }
-    write(1, output, mx_strlen(str));
+    write(1, output, mx_strlen(output));
     mx_printchar('\n');
     mx_strdel(&output);
 }

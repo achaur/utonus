@@ -8,8 +8,6 @@ FLAGS = -std=c11 $(addprefix -W, all extra error pedantic)
 RM = rm -rf
 PRINT = printf
 MKDIR = mkdir -p
-AR = ar
-AR_FLAGS = rcs
 
 INC_FILES = $(wildcard $(INC_DIR)*.h)
 SRC_FILES = $(wildcard $(SRC_DIR)*.c)

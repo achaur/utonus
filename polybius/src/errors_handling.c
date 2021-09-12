@@ -1,7 +1,7 @@
 #include "polybius.h"
 
 void print_error() {
-    write(2, "\"usage: ./polybius \"str\"\n", mx_strlen("\"usage: ./polybius \"str\"\n"));
+    write(2, "usage: ./polybius \"str\"\n", mx_strlen("usage: ./polybius \"str\"\n"));
     exit(1);
 }
 
